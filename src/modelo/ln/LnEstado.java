@@ -57,6 +57,7 @@ public class LnEstado {
         } catch (SQLException ex) {
             System.out.println("Error: " + ex.getMessage());
         }
+        System.out.println("hola");
 
         return estados;
     }
