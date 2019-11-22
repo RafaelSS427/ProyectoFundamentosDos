@@ -58,6 +58,7 @@ public class LnEstado {
             System.out.println("Error: " + ex.getMessage());
         }
         System.out.println("hola, se actualizó la hueva");
+        System.out.println("sout desde el repositorio");
 
         return estados;
     }
