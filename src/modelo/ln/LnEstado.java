@@ -60,6 +60,4 @@ public class LnEstado {
 
         return estados;
     }
-    System.out.print("Hola");
-
 }
