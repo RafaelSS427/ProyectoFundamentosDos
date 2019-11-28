@@ -20,9 +20,8 @@ public class LnEmpleado {
     public LnEmpleado() {
         this.conexion = new Conexion("empresa");// se establece la conexión con la base de datos
     }
-    
-    //Todos los métodos reciben como parámetro un objeto
 
+    //Todos los métodos reciben como parámetro un objeto
     //Método para ingresar un nuevo empleado
     public boolean ingresarEmpleado(Empleado emp) {
         boolean res = false;
@@ -173,8 +172,7 @@ public class LnEmpleado {
         }
         return salida;
     }
-    
-    
+
     //Elimina a un empleado
     public boolean eliminarEmpleado(Empleado e) {
         boolean resp = false;
@@ -216,5 +214,29 @@ public class LnEmpleado {
             System.out.println("Ocurrio un error al actualizar al empleado: " + ex.getMessage());
         }
         return res;
+    }
+
+    public ArrayList<Empleado> infoEmpl(Empleado emp) {
+        ArrayList<Empleado> empleado = new ArrayList<>();
+        String query = "SELECT nombre_emp, cedula_emp FROM empleados WHERE cod_emp = ?";
+        PreparedStatement stmt;
+        try {
+            stmt = (PreparedStatement) conexion.getConector().prepareStatement(query);
+            stmt.setString(1, emp.getCodigo());
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                emp.setNombre(rs.getString("nombre_emp"));
+                emp.setCedula(rs.getString("cedula_emp"));
+                
+                empleado.add(emp);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Ocurrió un error: " + e.getMessage());
+        }
+
+        return empleado;
     }
 }
