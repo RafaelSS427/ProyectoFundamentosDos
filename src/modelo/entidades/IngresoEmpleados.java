@@ -11,6 +11,7 @@ package modelo.entidades;
  */
 public class IngresoEmpleados {
     private String codigo;
+    private int ingresoLaborando;
 
     public IngresoEmpleados(String codigo) {
         this.codigo = codigo;
@@ -27,5 +28,15 @@ public class IngresoEmpleados {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
+
+    public int getIngresoLaborando() {
+        return ingresoLaborando;
+    }
+
+    public void setIngresoLaborando(int ingresoLaborando) {
+        this.ingresoLaborando = ingresoLaborando;
+    }
+    
+    
     
 }

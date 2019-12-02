@@ -9,7 +9,7 @@ package modelo.entidades;
  *
  * @author HP
  */
-public class Reportes {
+public class RegistroInnerJoin {
 
     private int id_rep;
     private String cod_emp2;
@@ -19,46 +19,21 @@ public class Reportes {
     private int laborando;
     private int totalHorasLab;
     private int salario;
+    private String nombre_emp;
+    private String estad_emp;
+    private String rol;
 
-    public Reportes(int id_rep, String cod_emp2, int horaEntrada, int horaSalida, String fecha, int laborando, int totalHorasLab, int salario) {
-        this.id_rep = id_rep;
+    public RegistroInnerJoin(String cod_emp2, String fecha) {
         this.cod_emp2 = cod_emp2;
-        this.horaEntrada = horaEntrada;
-        this.horaSalida = horaSalida;
         this.fecha = fecha;
-        this.laborando = laborando;
-        this.totalHorasLab = totalHorasLab;
-        this.salario = salario;
+    }
+
+    public RegistroInnerJoin(String cod_emp2) {
+        this.cod_emp2 = cod_emp2;
     }
     
-    public Reportes(){
+    public RegistroInnerJoin(){
         
-    }
-    
-    //cod_emp2, horaEntrada, fecha, laborando -> creamos el reporte
-    public Reportes(String cod_emp2, int horaEntrada, String fecha) {
-        this.cod_emp2 = cod_emp2;
-        this.horaEntrada = horaEntrada;
-        this.fecha = fecha;
-    }
-    
-    //horaSalida=?, laborando=?, totalHorasLab=?, salario=? WHERE cod_emp2=? -> actualizar reporte
-    public Reportes(int horaSalida, int totalHorasLab, int salario, String cod_emp2, String fecha) {
-        this.horaSalida = horaSalida;
-        this.totalHorasLab = totalHorasLab;
-        this.salario = salario;
-        this.cod_emp2 = cod_emp2;
-        this.fecha = fecha;
-    }
-
-    public Reportes(String cod_emp2) {
-        this.cod_emp2 = cod_emp2;
-    }
-
-    //consulta hora y estado del botón
-    public Reportes(String cod_emp2, String fecha) {
-        this.cod_emp2 = cod_emp2;
-        this.fecha = fecha;
     }
 
     public int getId_rep() {
@@ -123,5 +98,29 @@ public class Reportes {
 
     public void setSalario(int salario) {
         this.salario = salario;
+    }
+
+    public String getNombre_emp() {
+        return nombre_emp;
+    }
+
+    public void setNombre_emp(String nombre_emp) {
+        this.nombre_emp = nombre_emp;
+    }
+
+    public String getEstad_emp() {
+        return estad_emp;
+    }
+
+    public void setEstad_emp(String estad_emp) {
+        this.estad_emp = estad_emp;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }
