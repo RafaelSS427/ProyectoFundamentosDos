@@ -144,6 +144,8 @@ public class VistaAdminControlador implements Initializable {
         agregarEstadosBoxPanelEmpleado();
         crearMenuTablaEmpleado();
 
+        txt_buscarEmp.setOnKeyReleased(e -> ejemploKey());
+
         /*Pane rol*/
         agregarFilasPanelRol();
         agregarColumnasTablaPanelRol();
@@ -155,7 +157,6 @@ public class VistaAdminControlador implements Initializable {
         llenarComboBoxFechaUno();
         llenarComboBoxFechaDos();
         //crearMenuTablaReporte(); -> Existe un error al crear el pdf, en el hilo
-        
 
     }
 
@@ -629,7 +630,7 @@ public class VistaAdminControlador implements Initializable {
 
         table_reportes.getColumns().addAll(uno, nueve, diez, once, dos, tres, cuatro, cinco, seis, siete, ocho);
     }
-    
+
     public void crearMenuTablaReporte() {
         table_reportes.setRowFactory(
                 new Callback<TableView<RegistroInnerJoin>, TableRow<RegistroInnerJoin>>() {
@@ -661,7 +662,7 @@ public class VistaAdminControlador implements Initializable {
 
         int idRep = reportes.consultaInnerDos().get(index).getId_rep();
         System.out.println(idRep);
-        
+
         Runnable runn = new GenerarReporteAdminHilo(index);
         Thread tr = new Thread(runn);
         tr.start();
@@ -772,21 +773,29 @@ public class VistaAdminControlador implements Initializable {
 
     @FXML
     private void BuscarEmpleado(KeyEvent event) {
-        try {
-            if (txt_buscarEmp.getText().length() == 0) {//toLowerCase, pasa todo en minuscula
-                System.out.println("Salí");
-                actualizarFilasEmpleado();
-                setBusquedaEmpleado(false);
-            } else {
-                System.out.println("Entré");
-                System.out.println(txt_buscarEmp.getText());
-                buscarEmpleado();
-                setBusquedaEmpleado(true);
-            }
-        } catch (Exception e) {
-            System.out.println("se capturó el error: " + e.getMessage());
+        /*if (txt_buscarEmp.getText().length() == 0) {//toLowerCase, pasa todo en minuscula
+            System.out.println("Salí");
+            actualizarFilasEmpleado();
+            setBusquedaEmpleado(false);
+        } else {
+            System.out.println("Entré");
+            System.out.println(txt_buscarEmp.getText());
+            buscarEmpleado();
+            setBusquedaEmpleado(true);
+        }*/
+    }
+    
+    public void ejemploKey(){
+        if (txt_buscarEmp.getText().length() == 0) {//toLowerCase, pasa todo en minuscula
+            System.out.println("Salí");
+            actualizarFilasEmpleado();
+            setBusquedaEmpleado(false);
+        } else {
+            System.out.println("Entré");
+            System.out.println(txt_buscarEmp.getText());
+            buscarEmpleado();
+            setBusquedaEmpleado(true);
         }
-
     }
 
     @FXML
@@ -873,7 +882,7 @@ public class VistaAdminControlador implements Initializable {
     private void crearReporteConFecha(ActionEvent event) {
         String fechaU = box_fechaUno.getValue();
         String fechaD = box_fechaDos.getValue();
-        
+
         System.out.println(fechaU);
         System.out.println(fechaD);
 

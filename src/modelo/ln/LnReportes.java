@@ -26,7 +26,7 @@ public class LnReportes {
 
     public void nuevoReporte(Reportes rep) {
         //boolean res = false;
-        String query = "INSERT INTO reportes(cod_emp2, horaEntrada, fecha, laborando)VALUES(?, ?, ? , 1)";
+        String query = "INSERT INTO reportes(cod_emp2, horaEntrada, horaSalida, fecha, laborando, totalHorasLab, salario)VALUES(?, ?, 0, ? , 1, 0, 0)";
         PreparedStatement stmt;
 
         try {

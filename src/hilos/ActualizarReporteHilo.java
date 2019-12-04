@@ -49,12 +49,12 @@ public class ActualizarReporteHilo implements Runnable {
 
         Reportes rep = new Reportes(cod, fecha);
         int horaEntrada = reportes.consultaHoraEntrada(rep).get(0).getHoraEntrada();
-        int totalHorasLab = minutos - horaEntrada;
+        int totalHorasLab = hora/*minutos*/ - horaEntrada;//-> se realizó el cambio de minutos a hora
         //int totalHorasRol = Integer.parseInt(reportes.obteniendoRolHorasP(cod_emp2).get(0).getCod_emp2());
         int totalHorasRol = buscarPagoHoraRoles(cod);
         int totalSalario = totalHorasLab * totalHorasRol;
 
-        Reportes actualizar = new Reportes(minutos, totalHorasLab, totalSalario, cod, fecha);
+        Reportes actualizar = new Reportes(hora/*minutos*/, totalHorasLab, totalSalario, cod, fecha);
         reportes.actualizarReporte(actualizar);
     }
 

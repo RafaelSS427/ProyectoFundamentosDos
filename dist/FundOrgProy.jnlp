@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="FundOrgProy.jar" size="92783" download="eager" />
+    <jar href="FundOrgProy.jar" size="79111" download="eager" />
     <jar href="lib\itext5-itextpdf-5.5.12.jar" size="2320211" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.46.jar" size="1004838" download="eager" />
   </resources>

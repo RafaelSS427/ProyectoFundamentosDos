@@ -382,7 +382,7 @@ public class VistaEmpleadoControlador implements Initializable {
 
             String horaEntrada = hora + ":" + minutos + ":" + segundos;
 
-            Reportes nuevo = new Reportes(cod, minutos, fecha);
+            Reportes nuevo = new Reportes(cod, hora/*minutos*/, fecha);//cambio de minutos a hora
             reportes.nuevoReporte(nuevo);
             //ing_emp.actualizarLaborando(1);
 
