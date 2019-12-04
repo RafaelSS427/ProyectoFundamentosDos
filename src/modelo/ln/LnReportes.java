@@ -279,5 +279,35 @@ public class LnReportes {
 
         return reporte;
     }
+    
+    
+    //caprura hora entrada
+    public ArrayList<Reportes> consultaHoraEntrada(Reportes obj) {
+        ArrayList<Reportes> reporte = new ArrayList<>();
+        String query = "SELECT horaEntrada FROM reportes WHERE cod_emp2 = ? AND fecha = ?";
+        PreparedStatement stmt;
+
+        try {
+            stmt = (PreparedStatement) this.conexion.getConector().prepareStatement(query);
+            stmt.setString(1, obj.getCod_emp2());
+            stmt.setString(2, obj.getFecha());
+            
+            ResultSet rs = stmt.executeQuery();
+
+            Reportes rep;
+
+            while (rs.next()) {
+                rep = new Reportes();
+
+                rep.setHoraEntrada(Integer.parseInt(rs.getString("horaEntrada")));
+
+                reporte.add(rep);
+            }
+        } catch (SQLException e) {
+            System.out.println("Ocurrió un error en la consulta: " + e.getMessage());
+        }
+
+        return reporte;
+    }
 
 }

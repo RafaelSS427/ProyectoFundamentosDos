@@ -21,7 +21,7 @@ public class Conexion {
         this.user = "root";
         this.pass = "";
         this.db = db;
-        this.url = "jdbc:mysql://localhost/"+db;
+        this.url = "jdbc:mysql://127.0.0.1/"+db;
         conector = null;
         conectar();
     }

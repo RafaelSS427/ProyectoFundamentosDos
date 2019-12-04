@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="1237.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.VistaAdminControlador">
+   <children>
+      <Pane onMousePressed="#BuscarEmpleado" prefHeight="93.0" prefWidth="1237.0" style="-fx-background-color: rgb(136, 136,  136);" AnchorPane.bottomAnchor="502.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="294.0" layoutY="31.0" text="SISTEMA DE CONTROL DE ASISTENCIA LABORAL" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="panel_botones" layoutX="7.0" layoutY="101.0" prefHeight="494.0" prefWidth="200.0" style="-fx-background-color: rgb(68, 68, 68);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="93.0">
+         <children>
+            <Button fx:id="btn_subModuloEmp" layoutX="36.0" layoutY="51.0" mnemonicParsing="false" onAction="#subModuloEmp" prefHeight="42.0" prefWidth="128.0" style="-fx-border-color: rgb(254,128, 0 ); -fx-background-color: rgb(68, 68, 68);" text="EMPLEADOS" textFill="#fe8000">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_subModuloRol" layoutX="36.0" layoutY="119.0" mnemonicParsing="false" onAction="#subModuloRol" prefHeight="42.0" prefWidth="128.0" style="-fx-border-color: rgb(254,128, 0 ); -fx-background-color: rgb(68, 68, 68);" text="ROLES" textFill="#fe8000">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_subModuloRep" layoutX="36.0" layoutY="190.0" mnemonicParsing="false" onAction="#subModuloRep" prefHeight="42.0" prefWidth="128.0" style="-fx-border-color: rgb(254,128, 0 ); -fx-background-color: rgb(68, 68, 68);" text="REPORTES" textFill="#fe8000">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_salida" layoutX="36.0" layoutY="424.0" mnemonicParsing="false" onAction="#volver_login" prefHeight="42.0" prefWidth="128.0" style="-fx-border-color: rgb(254,128, 0 ); -fx-background-color: rgb(254, 128, 0);" text="SALIR" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="panel_empleado" layoutX="200.0" layoutY="93.0" prefHeight="502.0" prefWidth="1037.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <Separator layoutX="310.0" layoutY="18.0" orientation="VERTICAL" prefHeight="461.0" prefWidth="6.0" />
+            <TableView fx:id="table_empleados" layoutX="332.0" layoutY="75.0" prefHeight="410.0" prefWidth="697.0" style="-fx-border-color: rgb(57, 82, 253);" />
+            <TextField fx:id="txt_nombreEmp" layoutX="79.0" layoutY="41.0" />
+            <Label layoutX="14.0" layoutY="43.0" text="Nombre">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_apellUEmp" layoutX="139.0" layoutY="77.0" />
+            <Label layoutX="16.0" layoutY="79.0" text="Apellido paterno">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_apellDEmp" layoutX="148.0" layoutY="113.0" />
+            <Label layoutX="19.0" layoutY="115.0" text="Apellido materno">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_cedEmp" layoutX="74.0" layoutY="154.0" />
+            <Label layoutX="17.0" layoutY="156.0" text="Cedula">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_telEmp" layoutX="87.0" layoutY="196.0" />
+            <Label layoutX="17.0" layoutY="198.0" text="Teléfono">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_correoEmp" layoutX="74.0" layoutY="236.0" prefHeight="25.0" prefWidth="216.0" />
+            <Label layoutX="18.0" layoutY="238.0" text="Correo">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="280.0" text="Rol">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="box_rolEmp" layoutX="48.0" layoutY="278.0" prefWidth="150.0" />
+            <Label layoutX="18.0" layoutY="332.0" text="Estado">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="box_estadoEmp" layoutX="73.0" layoutY="330.0" prefWidth="150.0" />
+            <Button fx:id="btnEmpleadoAccion" layoutX="74.0" layoutY="401.0" mnemonicParsing="false" onAction="#agregarNuevoEmpleado" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: rgb(57,82, 253 );" text="NUEVO EMPLEADO" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Button>
+            <TextField fx:id="txt_buscarEmp" layoutX="332.0" layoutY="28.0" onKeyReleased="#BuscarEmpleado" prefHeight="25.0" prefWidth="697.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="panel_roles" layoutX="200.0" layoutY="93.0" prefHeight="502.0" prefWidth="1037.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="52.0" layoutY="51.0" text="Nombre Rol:">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="52.0" layoutY="141.0" text="Pago Por Hora:">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_nombreRol" layoutX="52.0" layoutY="79.0" />
+            <TextField fx:id="txt_pagoHoraRol" layoutX="52.0" layoutY="172.0" />
+            <TableView fx:id="table_rol" layoutX="341.0" layoutY="56.0" prefHeight="364.0" prefWidth="648.0" />
+            <Separator layoutX="276.0" layoutY="21.0" orientation="VERTICAL" prefHeight="461.0" prefWidth="6.0" />
+            <Button fx:id="btn_agregarRol" layoutX="52.0" layoutY="238.0" mnemonicParsing="false" onAction="#metodoAgregarRol" style="-fx-background-color: rgb(57,82, 253 );" text="AGREGAR ROL" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="panel_reportes" layoutX="200.0" layoutY="93.0" prefHeight="502.0" prefWidth="1037.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <TableView fx:id="table_reportes" layoutX="18.0" layoutY="21.0" prefHeight="260.0" prefWidth="1002.0" />
+            <Button fx:id="btn_reporteGeneral" layoutX="426.0" layoutY="327.0" mnemonicParsing="false" onAction="#crearReporteGeneral" prefHeight="33.0" prefWidth="187.0" style="-fx-background-color: rgb(2, 161, 213);" text="REPORTE GENERAL" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnFechaReporte" layoutX="297.0" layoutY="413.0" mnemonicParsing="false" onAction="#crearReporteConFecha" prefHeight="33.0" prefWidth="171.0" style="-fx-background-color: rgb(2, 161, 213);" text="FECHA REPORTE" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="box_fechaUno" layoutX="485.0" layoutY="417.0" prefHeight="25.0" prefWidth="125.0" />
+            <Separator layoutX="17.0" layoutY="394.0" prefHeight="4.0" prefWidth="1002.0" />
+            <ComboBox fx:id="box_fechaDos" layoutX="635.0" layoutY="417.0" prefHeight="25.0" prefWidth="125.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
