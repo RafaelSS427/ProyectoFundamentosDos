@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Programas_Javafx/FundOrgProy/src/controlador/VistaProgramaControlador.java</file>
-            <file>file:/C:/Programas_Javafx/FundOrgProy/src/controlador/Main.java</file>
-            <file>file:/C:/Programas_Javafx/FundOrgProy/src/controlador/VistaEmpleadoControlador.java</file>
-            <file>file:/C:/Programas_Javafx/FundOrgProy/src/hilos/GenerarReporteHilo.java</file>
-            <file>file:/C:/Programas_Javafx/FundOrgProy/src/modelo/bd/Conexion.java</file>
-            <file>file:/C:/Programas_Javafx/FundOrgProy/src/hilos/ActualizarReporteHilo.java</file>
-            <file>file:/C:/Programas_Javafx/FundOrgProy/src/modelo/ln/LnReportes.java</file>
-            <file>file:/C:/Programas_Javafx/FundOrgProy/src/controlador/VistaAdminControlador.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

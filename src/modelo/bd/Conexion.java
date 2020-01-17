@@ -11,7 +11,7 @@ import java.sql.*;
  * @author HP
  */
 public class Conexion {
-     private String user;
+    private String user;
     private String pass;
     private String db;
     private String url;
